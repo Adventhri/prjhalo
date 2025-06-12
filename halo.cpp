@@ -3,19 +3,29 @@
 using namespace std;
 
 int main() {
-    string nama[5];
+    int jumlah;
 
-    nama[0] = "rayhan";
-    nama[1] = "fadli";
-    nama[2] = "ijan";
-    nama[3] = "raka";
-    nama[4] = "anshari";
+    cout << "Masukkan jumlah nama yang ingin dimasukkan: ";
+    cin >> jumlah;
+    cin.ignore(); // Membersihkan newline dari input sebelumnya
 
- cout << "Daftar Nama:\n";
-    for (int i = 0; i < 5; i++) {
+    // Menggunakan array dinamis
+    string* nama = new string[jumlah];
+
+    // Input nama
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Masukkan nama ke-" << i + 1 << ": ";
+        getline(cin, nama[i]);
+    }
+
+    // Output nama
+    cout << "\nDaftar Nama:\n";
+    for (int i = 0; i < jumlah; i++) {
         cout << i + 1 << ". " << nama[i] << endl;
     }
 
+    // Dealokasi memori
+    delete[] nama;
+
     return 0;
 }
-
