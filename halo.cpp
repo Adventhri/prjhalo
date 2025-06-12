@@ -11,6 +11,11 @@ int main() {
     nama[3] = "raka";
     nama[4] = "anshari";
 
+ cout << "Daftar Nama:\n";
+    for (int i = 0; i < 5; i++) {
+        cout << i + 1 << ". " << nama[i] << endl;
+    }
+
     return 0;
 }
 
